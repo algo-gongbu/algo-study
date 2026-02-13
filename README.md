@@ -3,5 +3,9 @@
 ## 📊 Weekly Dashboard
 
 <!-- WEEKLY_DASHBOARD_START -->
-자동 집계 중...
+
+📅 기준: 2026-02-09 (월요일 00:00 KST)
+
+| Member | Count | Status |
+|--------|-------|--------|
 <!-- WEEKLY_DASHBOARD_END -->
