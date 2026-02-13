@@ -7,6 +7,7 @@ on:
 
 jobs:
   move:
+    if: github.repository_owner != 'algo-gongbuhaera'
     runs-on: ubuntu-latest
 
     steps:
@@ -14,13 +15,15 @@ jobs:
 
       - name: Move folder
         run: |
+          TARGET=${{ vars.BAEKJOON_ID }}
+
           if [ -d "백준" ]; then
-            mkdir -p tomchaccom
+            mkdir -p "$TARGET"
             git config user.name "github-actions"
             git config user.email "actions@github.com"
-            mv 백준 tomchaccom/
+            mv 백준 "$TARGET"/
             git add .
-            git commit -m "auto: move to tomchaccom folder"
+            git commit -m "auto: move to $TARGET folder"
             git push
           fi
 
