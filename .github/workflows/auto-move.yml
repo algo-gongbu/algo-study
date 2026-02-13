@@ -7,7 +7,7 @@ on:
 
 jobs:
   move:
-    if: github.repository_owner != 'algo-gongbuhaera'
+    if: github.repository_owner != 'algo-gongbu'
     runs-on: ubuntu-latest
 
     steps:
