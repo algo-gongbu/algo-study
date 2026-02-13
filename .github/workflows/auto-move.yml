@@ -13,17 +13,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Move folder
+      - name: Merge Baekjoon folder
         run: |
           TARGET=${{ vars.BAEKJOON_ID }}
 
           if [ -d "백준" ]; then
-            mkdir -p "$TARGET"
+            mkdir -p "$TARGET/백준"
+
             git config user.name "github-actions"
             git config user.email "actions@github.com"
-            mv 백준 "$TARGET"/
+
+            rsync -av --remove-source-files 백준/ "$TARGET/백준/"
+            rm -rf 백준
+
             git add .
-            git commit -m "auto: move to $TARGET folder"
+            git commit -m "auto: merge baekjoon files into $TARGET folder" || echo "No changes"
             git push
           fi
 
