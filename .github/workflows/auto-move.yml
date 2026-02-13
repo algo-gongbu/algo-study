@@ -1,0 +1,26 @@
+name: Auto Move Baekjoon
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  move:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Move folder
+        run: |
+          if [ -d "백준" ]; then
+            mkdir -p tomchaccom
+            git config user.name "github-actions"
+            git config user.email "actions@github.com"
+            mv 백준 tomchaccom/
+            git add .
+            git commit -m "auto: move to tomchaccom folder"
+            git push
+          fi
+
