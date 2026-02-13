@@ -1,0 +1,92 @@
+name: Weekly Dashboard
+
+on:
+  schedule:
+    - cron: '59 14 * * 0'
+  workflow_dispatch:
+
+jobs:
+  dashboard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate stats
+        uses: actions/github-script@v6
+        id: stats
+        with:
+          script: |
+            const org = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const { data: members } = await github.rest.orgs.listMembers({
+              org: org,
+              per_page: 100
+            });
+
+            const memberLogins = members.map(m => m.login);
+
+            const now = new Date();
+            const day = now.getUTCDay();
+            const diff = day === 0 ? 6 : day - 1;
+            const monday = new Date(now);
+            monday.setUTCDate(now.getUTCDate() - diff);
+            monday.setUTCHours(0,0,0,0);
+
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: org,
+              repo: repo,
+              state: "closed",
+              per_page: 100
+            });
+
+            const weekly = pulls.filter(pr =>
+              pr.merged_at && new Date(pr.merged_at) >= monday
+            );
+
+            const counts = {};
+            memberLogins.forEach(user => counts[user] = 0);
+
+            weekly.forEach(pr => {
+              if (counts.hasOwnProperty(pr.user.login)) {
+                counts[pr.user.login]++;
+              }
+            });
+
+            let table = "| Member | Count | Status |\n";
+            table += "|--------|-------|--------|\n";
+
+            for (const user of memberLogins) {
+              const count = counts[user];
+              const status = count >= 5 ? "✅" : "❌";
+              table += `| ${user} | ${count} | ${status} |\n`;
+            }
+
+            return table;
+
+      - name: Inject into README
+        run: |
+          TABLE="${{ steps.stats.outputs.result }}"
+          awk -v table="$TABLE" '
+          /<!-- WEEKLY_DASHBOARD_START -->/ {
+            print;
+            print table;
+            skip=1;
+            next;
+          }
+          /<!-- WEEKLY_DASHBOARD_END -->/ {
+            skip=0;
+          }
+          !skip
+          ' README.md > temp.md
+          mv temp.md README.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "📊 weekly dashboard update" || echo "No changes"
+          git push
+
