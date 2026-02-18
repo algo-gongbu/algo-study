@@ -1,4 +1,4 @@
-name: Auto Move Baekjoon
+name: Auto Move Problems
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-  
+
 jobs:
   move:
     if: github.repository_owner != 'algo-gongbu'
@@ -16,27 +16,56 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Merge Baekjoon folder safely
+      - name: Merge platform folders safely
         run: |
           TARGET=${{ vars.BAEKJOON_ID }}
 
-          # TARGET이 없으면 에러 처리 (오타 방지)
+          # ---------------------------
+          # 1️⃣ BAEKJOON_ID 검증
+          # ---------------------------
+          if [ -z "$TARGET" ]; then
+            echo "Error: BAEKJOON_ID variable is not set."
+            exit 1
+          fi
+
           if [ ! -d "$TARGET" ]; then
             echo "Error: Target folder $TARGET does not exist!"
             exit 1
           fi
 
-          if [ -d "백준" ]; then
-            mkdir -p "$TARGET/백준"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
 
-            git config user.name "github-actions"
-            git config user.email "actions@github.com"
+          MOVED=false
 
-            rsync -av --remove-source-files 백준/ "$TARGET/백준/"
-            rm -rf 백준
+          # ---------------------------
+          # 2️⃣ 처리할 플랫폼 목록
+          # ---------------------------
+          PLATFORMS=("백준" "프로그래머스")
 
+          for PLATFORM in "${PLATFORMS[@]}"; do
+            if [ -d "$PLATFORM" ]; then
+              echo "Moving $PLATFORM folder..."
+
+              mkdir -p "$TARGET/$PLATFORM"
+
+              # 안전 병합
+              rsync -av --remove-source-files "$PLATFORM/" "$TARGET/$PLATFORM/"
+
+              rm -rf "$PLATFORM"
+
+              MOVED=true
+            fi
+          done
+
+          # ---------------------------
+          # 3️⃣ 변경사항 커밋
+          # ---------------------------
+          if [ "$MOVED" = true ]; then
             git add .
-            git commit -m "auto: merge baekjoon files into $TARGET folder" || echo "No changes"
+            git commit -m "auto: merge solved problems into $TARGET folder" || echo "No changes"
             git push
+          else
+            echo "No platform folders to move."
           fi
 
