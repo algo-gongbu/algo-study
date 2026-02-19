@@ -59,13 +59,16 @@ jobs:
           done
 
           # ---------------------------
-          # 3️⃣ 변경사항 커밋
+          # 3️⃣ 변경사항 커밋 및 푸시
           # ---------------------------
           if [ "$MOVED" = true ]; then
             git add .
             git commit -m "auto: merge solved problems into $TARGET folder" || echo "No changes"
+            
+            # 원격 저장소의 최신 상태를 가져와 Rebase 수행
+            git pull --rebase origin main
+            
             git push
           else
             echo "No platform folders to move."
           fi
-
