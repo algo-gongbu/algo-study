@@ -8,13 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| LYoooJ | 1 | ❌ |
-| Nul0luN | 9 | ✅ |
-| alicebsy | 1 | ❌ |
-| onff02 | 3 | ❌ |
-| orca-svg | 3 | ❌ |
-| sungjaep11 | 1 | ❌ |
-| tomchaccom | 3 | ❌ |
+| - | 0 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
