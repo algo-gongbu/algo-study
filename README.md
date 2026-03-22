@@ -8,7 +8,16 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| - | 0 | ❌ |
+| KangYeSeo04 | 4 | ❌ |
+| LYoooJ | 5 | ✅ |
+| Nul0luN | 23 | ✅ |
+| alicebsy | 5 | ✅ |
+| godten-cmd | 5 | ✅ |
+| haeunjeon0410 | 28 | ✅ |
+| onff02 | 16 | ✅ |
+| orca-svg | 5 | ✅ |
+| sungjaep11 | 7 | ✅ |
+| tomchaccom | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
