@@ -28,10 +28,10 @@ int main() {
         res += ((acc[i] - 1) * arr[i]) % mod;
         res %= mod;
         res -= ((acc[n - 1 - i] - 1) * arr[i]) % mod;
-        res = (res + mod) % mod;
+        res %= mod;
     }
 
-    cout << res << '\n';
+    cout << (res + mod) % mod << '\n';
 
     return 0;
 }
