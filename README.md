@@ -8,7 +8,10 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| - | 0 | ❌ |
+| Nul0luN | 6 | ✅ |
+| godten-cmd | 2 | ❌ |
+| onff02 | 3 | ❌ |
+| sungjaep11 | 4 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 
