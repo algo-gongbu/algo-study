@@ -4,16 +4,11 @@
 
 <!-- WEEKLY_DASHBOARD_START -->
 
-📅 기준: 2026-03-30 (월요일 00:00 KST)
+📅 기준: 2026-05-04 (월요일 00:00 KST)
 
 | Member | Count | Status |
 |--------|-------|--------|
-| LYoooJ | 1 | ❌ |
-| Nul0luN | 5 | ✅ |
-| haeunjeon0410 | 10 | ✅ |
-| onff02 | 6 | ✅ |
-| sungjaep11 | 2 | ❌ |
-| tomchaccom | 1 | ❌ |
+| - | 0 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 

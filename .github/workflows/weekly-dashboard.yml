@@ -17,6 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          # pull --rebase를 위해 전체 히스토리를 가져옵니다.
+          fetch-depth: 0
 
       # =========================================
       # 1️⃣ 이번 주 PR 통계 계산
@@ -120,13 +123,25 @@ jobs:
           mv temp.md README.md
 
       # =========================================
-      # 3️⃣ 변경사항 커밋
+      # 3️⃣ 변경사항 커밋 및 푸시 (충돌 방지 로직 적용)
       # =========================================
-      - name: Commit changes
+      - name: Commit and Push changes
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add README.md
-          git commit -m "📊 weekly dashboard update" || echo "No changes"
-          git push
-
+          
+          # dashboard.md를 포함하여 모든 변경사항 스테이징
+          git add README.md dashboard.md
+          
+          # 변경사항이 실제 있는 경우에만 진행
+          if ! git diff --staged --quiet; then
+            # [skip ci]를 추가하여 대시보드 커밋이 액션을 다시 실행하지 않도록 설정
+            git commit -m "📊 weekly dashboard update [skip ci]"
+            
+            # 푸시 전 다른 멤버의 커밋이 있다면 내 커밋을 그 위로 재배치
+            git pull --rebase origin main
+            
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
