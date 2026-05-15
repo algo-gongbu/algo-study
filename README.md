@@ -8,12 +8,7 @@
 
 | Member | Count | Status |
 |--------|-------|--------|
-| LYoooJ | 5 | ✅ |
-| Nul0luN | 6 | ✅ |
-| alicebsy | 5 | ✅ |
-| haeunjeon0410 | 4 | ❌ |
-| sungjaep11 | 8 | ✅ |
-| tomchaccom | 7 | ✅ |
+| - | 0 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 # 스터디 참여 가이드
