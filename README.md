@@ -96,9 +96,11 @@ Merge commit, fork 재동기화를 자동으로 처리합니다. PR만 만들고
 ## 2-1. LeetCode 풀이 시 LeetHub 설치 (선택)
 
 LeetCode 문제도 대시보드에서 집계됩니다. LeetHub를 설치하면 문제 통과 시 fork 레포에 자동 업로드됩니다.
+설치 링크 : https://chromewebstore.google.com/detail/leethub-v2/mhanfgfagplhgemhjfeolkkdidbakocm
 
 1. Chrome 웹스토어에서 **LeetHub** 설치
-2. GitHub 로그인 후 본인 fork 레포 연결
+2. GitHub 로그인 후 본인 fork 레포 연결, 연동방식은 백준허브와 같습니다!
+
 
 ---
 
