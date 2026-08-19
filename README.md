@@ -8,7 +8,7 @@
 | Member | Count | Status |
 |--------|-------|--------|
 | LYoooJ | 5 | ✅ |
-| tomchaccom | 3 | ❌ |
+| tomchaccom | 4 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
