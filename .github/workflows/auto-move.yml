@@ -46,6 +46,19 @@ jobs:
             fi
           done
           # ---------------------------
+          # LeetCode: 0001-two-sum 형태 폴더 처리
+          # ---------------------------
+          for DIR in [0-9][0-9][0-9][0-9]-*/; do
+            DIR="${DIR%/}"
+            if [ -d "$DIR" ]; then
+              echo "Moving LeetCode problem $DIR..."
+              mkdir -p "$TARGET/LeetCode"
+              rsync -av --remove-source-files "$DIR/" "$TARGET/LeetCode/$DIR/"
+              rm -rf "$DIR"
+              MOVED=true
+            fi
+          done
+          # ---------------------------
           # 3️⃣ 변경사항 커밋 및 푸시
           # ---------------------------
           if [ "$MOVED" = true ]; then
