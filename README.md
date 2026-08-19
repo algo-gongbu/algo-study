@@ -93,6 +93,15 @@ Merge commit, fork 재동기화를 자동으로 처리합니다. PR만 만들고
 
 ---
 
+## 2-1. LeetCode 풀이 시 LeetHub 설치 (선택)
+
+LeetCode 문제도 대시보드에서 집계됩니다. LeetHub를 설치하면 문제 통과 시 fork 레포에 자동 업로드됩니다.
+
+1. Chrome 웹스토어에서 **LeetHub** 설치
+2. GitHub 로그인 후 본인 fork 레포 연결
+
+---
+
 ## 3. Repository Variable 설정 (BAEKJOON_ID)
 
 Action이 실행될 때 본인 폴더로 자동 이동하기 위해 반드시 설정해야 합니다.
@@ -156,6 +165,18 @@ pro/level{문제레벨}/{문제번호}
 boj/Gold/9935
 boj/Silver/1926
 pro/level1/42840
+```
+
+```
+leet/{난이도}/{문제설명}
+```
+
+예시:
+
+```
+leet/easy/two-sum
+leet/medium/longest-substring
+leet/hard/median-two-sorted-arrays
 ```
 
 <img width="360" height="270" alt="image" src="https://github.com/user-attachments/assets/ff5fd580-d0db-49d1-b757-606802f4781d" />
