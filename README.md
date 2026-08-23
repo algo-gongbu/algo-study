@@ -253,4 +253,12 @@ leet/hard/median-two-sorted-arrays
 |  |
 | ------- |
 | [0067-add-binary](https://github.com/sungjaep11/algo-study/tree/master/0067-add-binary) |
+## Linked List
+|  |
+| ------- |
+| [0061-rotate-list](https://github.com/sungjaep11/algo-study/tree/master/0061-rotate-list) |
+## Two Pointers
+|  |
+| ------- |
+| [0061-rotate-list](https://github.com/sungjaep11/algo-study/tree/master/0061-rotate-list) |
 <!---LeetCode Topics End-->
