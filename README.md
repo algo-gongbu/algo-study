@@ -240,4 +240,17 @@ leet/hard/median-two-sorted-arrays
 | ------- |
 | [0009-palindrome-number](https://github.com/tomchaccom/algo-study/tree/master/0009-palindrome-number) |
 | [0066-plus-one](https://github.com/sungjaep11/algo-study/tree/master/0066-plus-one) |
+| [0067-add-binary](https://github.com/sungjaep11/algo-study/tree/master/0067-add-binary) |
+## String
+|  |
+| ------- |
+| [0067-add-binary](https://github.com/sungjaep11/algo-study/tree/master/0067-add-binary) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0067-add-binary](https://github.com/sungjaep11/algo-study/tree/master/0067-add-binary) |
+## Simulation
+|  |
+| ------- |
+| [0067-add-binary](https://github.com/sungjaep11/algo-study/tree/master/0067-add-binary) |
 <!---LeetCode Topics End-->
