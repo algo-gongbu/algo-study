@@ -8,7 +8,7 @@
 | Member | Count | Status |
 |--------|-------|--------|
 | haeunjeon0410 | 5 | ✅ |
-| tomchaccom | 1 | ❌ |
+| tomchaccom | 2 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
