@@ -3,12 +3,11 @@
 ## 📊 Weekly Dashboard
 
 <!-- WEEKLY_DASHBOARD_START -->
-📅 기준 주간 시작: 2026-08-24 (월요일 00:00 KST)
+📅 기준 주간 시작: 2026-08-31 (월요일 00:00 KST)
 
 | Member | Count | Status |
 |--------|-------|--------|
-| haeunjeon0410 | 5 | ✅ |
-| tomchaccom | 5 | ✅ |
+| - | 0 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
