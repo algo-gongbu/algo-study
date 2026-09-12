@@ -8,7 +8,7 @@
 | Member | Count | Status |
 |--------|-------|--------|
 | LYoooJ | 2 | ❌ |
-| onff02 | 3 | ❌ |
+| onff02 | 4 | ❌ |
 <!-- WEEKLY_DASHBOARD_END -->
 
 ---
